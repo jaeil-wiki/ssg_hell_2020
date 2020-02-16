@@ -5,9 +5,14 @@ from django.shortcuts import render
 from Sample.models import Post
 
 
+def get_jo_name(name):
+    name = '조' + name
+    return name
+
+
 def hello(request):
     return render(request, 'hello.html', context={
-        'name': '조우석'
+        'name': get_jo_name('우석')
     })
 
 
